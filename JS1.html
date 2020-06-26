@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<!making a title to the page>
+    <title>Hello</title>
+<!setting the styles of the page>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        width: 50%;
+        max-width: 400px;
+        min-width: 300px;
+        margin: 0 auto;
+      }
+
+      .lastResult {
+        color: white;
+        padding: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+<!starting with a heading that tells the user to enter their name we might
+ change what is says later so it has a class>
+    <h1 class="Heading">Welcome, enter your name below</h1>
+<!now lets add a section with the input feild and a button next to it>
+    <div class="form">
+      <label for="Field">Name: </label><input type="text" id="Field" class="Field">
+      <input type="submit" value="go" class="fieldSubmit">
+    </div>
+<!now I'ma add a line of text we can change later that will be our computer's responses
+we are gonna put it in it's own section in case we want to write more into it later>
+    <div class= "response">
+      <p class="words">put it in the box</p>
+    </div>
+<!putting in a script element to start handling out inputs with JavaScript>
+    <script>
+//setting up vaiables for the HTML objects to be called
+      const fieldSubmit = document.querySelector('.fieldSubmit');
+      const Field = document.querySelector('.Field');
+      const write = document.querySelector('.words');
+//defining a function to find bad words if they are inputed
+      function checkname (n){
+        let fuck = n.includes('fuck');
+        let bitch = n.includes('bitch');
+        let ass = n.includes(' ass');
+        if (fuck===true){
+          return true;
+        } else if(bitch===true){
+          return true;
+        } else if (ass===true){
+          return true;
+        } else{
+          return false;
+        }
+      }
+//defining a function to reply to what is inputed
+      function sayhi (){
+        let Name= Field.value;
+        let badwords = checkname(Name);
+        if (badwords===false){
+          write.innerHTML = 'hello, '+Name+' how are you today?';
+        } else{
+          write.innerHTML = 'please put in your real name not a bad word.';
+        }
+      }
+//making the focus start on the input feild
+      Field.focus();
+//adding a listener to call the function when you click go.
+      fieldSubmit.addEventListener('click', sayhi);
+//adding another one for when you hit enter if there is something in the feild.
+      document.addEventListener('keypress',function (e){
+        if (e.key==='Enter' && Field.value.length!=0){
+          sayhi();
+        }
+      });
+
+    </script>
+  </body>
+</html>
