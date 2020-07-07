@@ -7,7 +7,7 @@
 <!setting the styles of the page>
     <style>
       html {
-        font-family: sans-serif;
+        font-family: serif;
       }
 
       body {
@@ -25,6 +25,8 @@
   </head>
 
   <body>
+    <canvas class="drawplace" width="200" height="200"></canvas>
+  
 <!starting with a heading that tells the user to enter their name we might
  change what is says later so it has a class>
     <h1 class="Heading">Welcome, enter your name below</h1>
@@ -44,6 +46,11 @@ we are gonna put it in it's own section in case we want to write more into it la
       const fieldSubmit = document.querySelector('.fieldSubmit');
       const Field = document.querySelector('.Field');
       const write = document.querySelector('.words');
+      const drawplace = document.querySelector('.drawplace');
+      var posy = 100;
+      var posx = 100;
+      var changeX = 1;
+      var changeY = -2;
 //defining a function to find bad words if they are inputed
       function checkname (n){
         let fuck = n.includes('fuck');
@@ -68,17 +75,46 @@ we are gonna put it in it's own section in case we want to write more into it la
         } else{
           write.innerHTML = 'please put in your real name not a bad word.';
         }
+        
+        window.requestAnimationFrame(draw);
       }
 //making the focus start on the input feild
       Field.focus();
 //adding a listener to call the function when you click go.
       fieldSubmit.addEventListener('click', sayhi);
+
 //adding another one for when you hit enter if there is something in the feild.
       document.addEventListener('keypress',function (e){
         if (e.key==='Enter' && Field.value.length!=0){
           sayhi();
         }
       });
+//making a draw function
+      function draw() {
+        
+
+        if (drawplace.getContext) {
+            var ctx = drawplace.getContext('2d');
+            ctx.clearRect(0, 0, 300, 300);
+            ctx.fillStyle = 'rgb(200,0,0)';
+            ctx.fillRect(posx,posy,20,20);
+          }
+          if (posy>=180){
+            changeY = (-1);  
+          } else if (posy<=1){
+            changeY= 1;
+          }
+          if (posx>=180){
+            changeX = -1;
+          }else if (posx<=1){
+            changeX= 1;
+          }
+          var newposx = posx+=changeX;
+          var newposy =  posy+=changeY;
+          posy = newposy;
+          posx = newposx;
+          window.requestAnimationFrame(draw);
+      }
 
     </script>
   </body>

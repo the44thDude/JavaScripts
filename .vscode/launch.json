@@ -1,0 +1,11 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "file:///C:/Users/1/Documents/GitHub/tasty-numbers/1,0,7/JavaScripts/JS1.html",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
