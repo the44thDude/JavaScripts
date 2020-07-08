@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<!making a title to the page>
+    <title>CalebSimmonsDotCom</title>
+<!setting the styles of the page>
+    <style>
+      html {
+        font-family: serif;
+      }
+
+      body {
+        width: 50%;
+        max-width: 400px;
+        min-width: 300px;
+        margin: 0 auto;
+      }
+
+      .lastResult {
+        color: white;
+        padding: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+   
+  
+<!starting with a heading>
+    <h1 class="Heading">Hello my name is Caleb Simmons welcome to my website</h1>
+<!now lets add a section with the input feild and a button next to it>
+    <div class="menu">
+        <form action="file:///C:/Users/1/Documents/GitHub/tasty-numbers/1,0,7/JavaScripts/JS2.html">
+            <input type="submit" value="mainpage" class="menu1">
+        </form>
+    </div>
+
+<!now I'ma add a line of text we can change later that will be our computer's responses
+we are gonna put it in it's own section in case we want to write more into it later>
+   
+      <p class="words">click the buttons to navigate different pages.</p>
+      <img class='image1' src="https://lh3.googleusercontent.com/VL7BDEz1znZIoeyGP9DW2F_GiaL8c7f6-J16TNrHbbRNmWwhLmWptMQGf-GRdhWeMAekFKjbEKW5DDhfCrYBuxSSvi3Jx0kryNmXgRHmgrtdL5TnEww-rB98Pr1EkZs-SXQoaHCnX7U=w2400" alt="W3Schools.com">
+<!putting in a script element to start handling inputs with JavaScript>
+    <script>
+        const image1 = document.querySelector('.image1');
+        var width = image1.offsetWidth;
+        var height = image1.offsetHeight;
+
+        function scale(n){
+            var m = n/2;
+            return m;
+        }
+        while(width>300){
+            width= scale(width);
+            height=scale(height);
+            
+        }
+        image1.setAttribute('width',width);
+        image1.setAttribute('height',height);
+
+        
+    </script>
+  </body>
+</html>

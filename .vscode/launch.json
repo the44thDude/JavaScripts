@@ -2,9 +2,15 @@
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    
+
+        {
+            "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "file:///C:/Users/1/Documents/GitHub/tasty-numbers/1,0,7/JavaScripts/JS1.html",
+            "url": "file:///C:/Users/1/Documents/GitHub/tasty-numbers/1,0,7/JavaScripts/JS2.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
