@@ -1,0 +1,19 @@
+*{
+    box-sizing:border-box;
+    padding: 0px;
+    margin: 0px;
+}
+html {
+    font-family: serif;
+    padding: 0px;
+    margin: 0px;
+    -ms-overflow-style: none;
+    scrollbar-arrow-color: #000;
+    scrollbar-base-color: rgb(185, 141, 121);
+    scrollbar-face-color: rgba(141, 102, 85,0.8);
+    scrollbar-color: rgb(185,141,121);
+    background:rgb(141, 102, 85);
+}
+html::-webkit-scrollbar{
+    display:none;
+}

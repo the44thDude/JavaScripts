@@ -7,10 +7,10 @@
     
 
         {
-            "type": "chrome",
+            "type": "firefox",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "file:///C:/Users/1/Documents/GitHub/tasty-numbers/1,0,7/JavaScripts/JS2.html",
+            "name": "firefox",
+            "url": "file:///C:/Users/1/Documents/GitHub/tasty-numbers/1,0,7/JavaScripts/JavaScripts/project1-ray-caster/ray.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
