@@ -74,8 +74,9 @@ const page = document.querySelector('.page');
         document.getElementById(id).appendChild(words)
         var Poem = document.createElement("iframe");
           Poem.setAttribute('ID',pid);
-          Poem.setAttribute('class','poems');
+          Poem.setAttribute('class','poemclose');
           Poem.setAttribute('src',poem);
+          Poem.setAttribute('scrolling','no');
           document.getElementById(id).appendChild(Poem);
         b++;
       };
@@ -86,7 +87,11 @@ const page = document.querySelector('.page');
           var poem = document.getElementById(pid);
           if(poem.className=='poemopen'){
             poem.setAttribute('class','poemclose');
+            poem.style.height='0px';
           }else{
             poem.setAttribute('class','poemopen');
+            poem.style.height=poem.contentWindow.document.documentElement.scrollHeight + 'px';
           }
-      }
+
+
+      };

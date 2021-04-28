@@ -151,10 +151,10 @@ a:active{
 }
 @keyframes open{
     from {height: 0px;}
-    to {height:1000px;}
+    to {height:auto;}
 }
 @keyframes close{
-    from {height:1000px;}
+    from {height:auto;}
     to {height:0px;}
 }
 .poems{
@@ -163,17 +163,17 @@ a:active{
     width:80%;
     background-color:rgb(185, 141, 121);
     border:none;
+    transition: height 1s ease 0s;
 
 }
 .poemopen{
     scrollbar-width:0px;
     overflow:hidden;
     width:80%;
-    height:1000px;
+    height:0px;
     background-color:rgb(185, 141, 121);  
     border:none;
-    animation-name:open;
-    animation-duration: 1s;
+    transition: height 1s ease 0s;
   
 }
 .poemclose{
@@ -183,8 +183,7 @@ a:active{
     height:0px;
     background-color:rgb(185, 141, 121);  
     border:none;
-    animation-name: close; 
-    animation-duration: 1s;
+    transition: height 1s ease 0s;
    
 
 }
