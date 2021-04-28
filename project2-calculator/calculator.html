@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+<section class=centering>
+    <div id=resultbar>
+        <p id=output></p>
+    </div>
+    <div id=buttonbin>
+    <button type=button class=button id=B1 onclick="buttonpress('1')">1</button>
+    <button type=button class=button id=B4 onclick="buttonpress('4')">4</button>
+    <button type=button class=button id=B7 onclick="buttonpress('7')">7</button>
+    <button type=button class=button id=B2 onclick="buttonpress('2')">2</button>
+    <button type=button class=button id=B5 onclick="buttonpress('5')">5</button>
+    <button type=button class=button id=B8 onclick="buttonpress('8')">8</button>
+    <button type=button class=button id=B3 onclick="buttonpress('3')">3</button>
+    <button type=button class=button id=B6 onclick="buttonpress('6')">6</button>
+    <button type=button class=button id=B9 onclick="buttonpress('9')">9</button>
+    <button type=button class=button id=BP onclick="buttonpress('+')">+</button>
+    <button type=button class=button id=BS onclick="buttonpress('-')">-</button>
+    <button type=button class=button id=BM onclick="buttonpress('*')">*</button>
+    
+    </div>
+    <div id=buttonbarA>
+        <button type=button class=button id=B0 onclick="buttonpress('0')">0</button>
+    </div>
+    <div id=buttonbarB>
+        <button type=button class=button id=BE onclick="buttonpress('=')">=</button>
+        <button type=button class=button id=BD onclick="buttonpress('/')">/</button>
+    </div>
+</section>
+<script src=calculator.js></script>
+</body>
+</html>

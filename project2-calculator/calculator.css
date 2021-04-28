@@ -1,0 +1,79 @@
+:root{
+    --bgcolor:#f4f4f4;
+    --Pcolor:#444;
+}
+*{
+    box-sizing:border-box;
+    padding: 0px;
+    margin: 0px;
+}
+html{
+    font-family: serif;
+    padding:0px;
+    margin: 0px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    font-size:18px;
+    background:#fff;
+}
+.button{
+    font-size:30px;
+    color: var(--Pcolor);
+    background:var(--bgcolor);
+    border-style: solid;
+    border-radius: 1rem;
+    width: 5rem;
+    height:3rem;
+    margin:1px;
+
+}
+#buttonbin{
+    background:var(--bgcolor);
+    border-style:double;
+    border-bottom-style:none;
+    border-color:var(--Pcolor);
+    columns:4;
+    column-gap: .5rem;
+    height:9.5rem;
+    width:22rem;
+}
+#buttonbarA{
+    background:var(--bgcolor);
+    border-bottom-style:double;
+    border-left-style:double;
+    border-color:var(--Pcolor);
+    columns:2;
+    column-gap: .5rem;
+    height:3.5rem;
+    width:11rem;
+    display:inline-block;
+}
+#buttonbarB{
+    position:relative;
+    left:-.25rem;
+    background:var(--bgcolor);
+    border-bottom-style:double;
+    border-right-style:double;
+    border-color:var(--Pcolor);
+    columns:2;
+    column-gap: .5rem;
+    height:3.5rem;
+    width:11rem;
+    display:inline-block;
+
+}
+#resultbar{
+    background:var(--bgcolor);
+    height:6rem;
+    width:22rem;
+}
+#B0{
+    column-span:2;
+    width:10rem;
+}
+.centering{
+    margin:auto;
+    padding: 10rem;
+    width:43rem;
+    height:39rem;
+}

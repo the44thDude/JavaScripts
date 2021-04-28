@@ -1,0 +1,93 @@
+*{
+    box-sizing:border-box;
+    padding: 0px;
+    margin: 0px;
+}
+html{
+    font-family: serif;
+    padding:0px;
+    margin: 0px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    font-size:3px;
+    background:#fff;
+    cursor:none;
+}
+
+.spacer{
+    height:64rem;
+    width:100rem;
+    margin: auto;
+    z-index:+7;
+    background:#fff;
+}
+.upline{
+    background: #fff;
+    height:10px;
+    width:2px;
+    position:absolute;
+    top:95.5rem;
+    left:265rem;
+
+}
+.crossline{
+    background: #fff;
+    height:2px;
+    width:10px;
+    position:absolute;
+    top:97rem;
+    left:263.5rem
+}
+.fov{
+    background:#777;
+    height:64rem;
+    width:64rem;
+    margin:auto;
+    columns: 64;
+    column-gap:0px;
+    z-index:-2;
+}
+
+.pixlcase{
+    background:rgba(0, 0, 0, 0);
+    width:1rem;
+    height:64rem;
+}
+.pixlN{
+    margin:0;
+    width:1rem;
+    height:64rem;
+    background:#ff0000;
+    position: absolute;
+
+}
+.pixlS{
+    margin:0;
+    width:1rem;
+    height:64rem;
+    background: #bb00ff;
+    position: absolute;
+    
+}
+.pixlE{
+    margin:0;
+    width:1rem;
+    height:64rem;
+    background: #0004ff;
+    position: absolute;
+    
+}
+.pixlW{
+    margin:0;
+    width:1rem;
+    height:64rem;
+    background: #33ff00;
+    position: absolute;
+    
+}.pixl{
+    margin:0;
+    width:1rem;
+    height:64rem;
+    background: #33ff00;
+    position: absolute;
+}
