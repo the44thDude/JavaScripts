@@ -16,7 +16,7 @@ c.height = window.innerHeight;
 class linearray{
     constructor(xcords,ycords){
         this.xcords=xcords;
-        this.ycords=yords;
+        this.ycords=ycords;
     }
 }
 
@@ -62,21 +62,25 @@ function line(px,py,x,y){
 function toolact(x,y,tool){
     if (tool=='draw'){
         draw(x,y);
+        
     }
 }
  function draw(x,y){
     mark(x,y);
     if (lastmarkx!=null){
         line(lastmarkx,lastmarky,x,y);
-    }
-    lastmarkx=x;
-    lastmarky=y;
+        }
+        lastmarkx=x;
+        lastmarky=y;
+
+    
  }
 document.getElementById("C1").addEventListener('mousedown',function(e){
     mousedown=true;
     var mousex = e.x;
     var mousey = e.y;
     toolact(mousex,mousey,'draw');
+    
 })
 document.getElementById("C1").addEventListener('mouseup',function(e){
     mousedown=false;
@@ -84,6 +88,7 @@ document.getElementById("C1").addEventListener('mouseup',function(e){
     lastmarkx=null;
     lastmarky=null;
     }
+    
 })
 document.getElementById("C1").addEventListener('mousemove',function (e) {
    if(mousedown==true){
@@ -91,4 +96,5 @@ document.getElementById("C1").addEventListener('mousemove',function (e) {
     var mousey = e.y;
     toolact(mousex,mousey,'draw');
    }
+    
 });
