@@ -10,7 +10,7 @@
             "type": "firefox",
             "request": "launch",
             "name": "firefox",
-            "url": "file:///C:/Users/1/Documents/GitHub/tasty-numbers/1,0,7/JavaScripts/JavaScripts/project1-ray-caster/ray.html",
+            "url": "",
             "webRoot": "${workspaceFolder}"
         }
     ]

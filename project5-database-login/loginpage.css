@@ -1,0 +1,31 @@
+:root{
+    --bgcolor:#f4f4f4;
+    --Pcolor:#444;
+}
+*{
+    box-sizing:border-box;
+    padding: 0px;
+    margin: 0px;
+}
+html{
+    font-family: serif;
+    padding:0px;
+    margin: 0px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    font-size:18px;
+    background:#fff;
+}
+.section{
+    margin-left:35%;
+    margin-top:20%;
+    width:25%;
+    height:20%;
+
+}
+.button{
+    display:block;
+}
+p1{
+    display:block;
+}

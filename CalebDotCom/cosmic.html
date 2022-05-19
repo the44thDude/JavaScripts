@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="CalebDotCom.css">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalebDotComJsShowcase</title>
+</head>
+<body>
+    <header>
+        <div>
+          <h1>CalebDotCom</h1>
+        </div>
+        <nav> <script>
+          function action(){
+            dropdown=document.getElementById("pro-dropdown").className
+            if(dropdown=="Omenu"){
+              document.getElementById("pro-dropdown").className= "Cmenu";
+            }else{
+            document.getElementById("pro-dropdown").className="Omenu";
+            }
+          }
+      
+        </script>
+          <a href="index.html">Home</a>
+          <a href="docs.html">Business skills</a>
+          <div id="pro-dropdown" onclick="action()"class="menu">
+            <p>Developer skills</p>
+            <a href="css.html">CSS showcase</a>
+            <a href="cosmic.html">JS showcase</a>
+            <a href="data.html">Mock Database</a>
+          </div>
+        </nav>
+    </header>
+    <main>
+        <script>
+            const UnitNames = ["one","two", "three", "four","five","six", "seven","eight","nine"]
+            const TeenNames = ["ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
+            const DeciNames = ["twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"]
+            const CommaNames = ["thousand","million","billion","trillion","quadrillion","quintillion","sextillion","septillion","octillion","nonillion"]
+
+            function namenum(x){
+                x=x.toString();
+                var y= x.length-1
+                var name =''
+                while (y>=0){
+                    var digit = x[y]
+                    if ((x.length-(y+1))%3==0 && (x.length-(y+1))!=0){
+
+                        var c = ((x.length-(y+1))/3)-1
+                        name = CommaNames[c]+" " + name
+                        name = UnitNames[Number(digit)-1]+" " + name
+                    }else if ((x.length-y)%3==0){
+                        if(x.length-y==3){
+                            name = "and " + name
+                        }
+                        name = "hundred "+ name;
+                        name = UnitNames[Number(digit)-1]+" " + name
+                    }else if ((1+x.length-y)%3==0){
+                        if (digit=="1"){
+                            name= TeenNames[Number(x[y+1])]+" "+name;
+                        }else{
+                            name= DeciNames[Number(digit)-2]+" "+name;
+                        }
+                    }else{
+                        if(y!=0){
+                            if(x[y-1]!="1"){
+                                name=UnitNames[Number(digit)-1]+name
+                            }
+                        }else{
+                            name=UnitNames[Number(digit)-1]+name 
+                        }
+                    }
+
+                    y=y-1;
+                }
+            return name
+            }
+
+            function Cosmicpath(x){
+                var output = namenum(x);
+                var line = output;
+                var NameNoSpace = namenum(x).replace(/ /g,'');
+                y=NameNoSpace.length
+                while(output!= "four"){
+                    output = namenum(y);
+                line = line +" is "+output+", "+output
+                NameNoSpace = output.replace(/ /g,'');
+                y=NameNoSpace.length     
+                }
+                line=line+" is four which makes it Cosmic"
+                return line
+            }
+            function run(x){
+                if (x=='x'){
+                    var y = Math.floor(Math.random() * 100000000000000000) + 1;
+                    document.getElementById("outputfield").innerText= Cosmicpath(y);
+                }
+            }
+
+        </script>
+        <h2>Javascript Showcase</h2>
+        <p> The following function takes any 9 digit number and finds the path to 4 using the "cosmic algarithm". the "cosmic algarithm" means each number is mapped to the number of letters in it's english name. example: the cosmic path of 18 is 18>8>5>4 and 4 is cosmic. meaning it maps to itself. (and is the onloy number to do so.)</p>
+        <button onclick="run('x')">random number</button>
+        <div id="outputfield"></div>
+    </main>
+</body>
+</html>

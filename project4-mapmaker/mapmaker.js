@@ -13,13 +13,14 @@ var c = document.getElementById("C1");
 c.width  = window.innerWidth;
 c.height = window.innerHeight;
 
+
 class linearray{
     constructor(xcords,ycords){
         this.xcords=xcords;
         this.ycords=ycords;
     }
 }
-
+let markedpoints= new linearray("","");
 function mark(x,y){
     var c = document.getElementById("C1");
     var ctx = c.getContext('2d');
@@ -37,12 +38,15 @@ function line(px,py,x,y){
     ctx.moveTo(px,py);
     ctx.lineTo(x,y);
     ctx.stroke();
-    let markedpoints= new linearray(x,y);
+    
     while(px!=x){
         var pystart =py;
         while(py!=y){
             if(ctx.isPointInPath(px, py)){
-                markedpoints.xcords=markedpoints.xcords+px;
+                let pxs= px.toString();
+                let pys= py.toString();
+                markedpoints.xcords=markedpoints.xcords+ pxs;
+                markedpoints.ycords=markedpoints.ycords+ pys;
             }
             if(py<y){
                 py=py+1;
@@ -58,6 +62,7 @@ function line(px,py,x,y){
         }
     }
     ctx.closePath();
+    console.log(markedpoints);
 }
 function toolact(x,y,tool){
     if (tool=='draw'){
