@@ -37,6 +37,7 @@ h2 {
     font-weight:800;
     text-decoration: underline;
     text-align:center;  
+    padding:3rem;
 }
 h3 {
     font-family:sans-serif;
@@ -58,6 +59,7 @@ p{
     padding-bottom:10px;
     color: #bbb;
     margin: 10px;
+    display:inline;
 }
 a{
     font-family:sans-serif;
@@ -79,6 +81,9 @@ main{
     background-color:#333;
     border-radius: 2rem;
     padding: 2rem;
+    min-width:320px;
+    min-height:800px;
+    margin:auto;
 }
 nav{
     background-color:#333;
@@ -91,6 +96,9 @@ nav{
 #pro-dropdown{
     cursor:pointer;
     overflow:hidden; 
+}
+#devskill{
+    display:block;
 }
 .menu{
     height:40px;
@@ -108,12 +116,21 @@ nav{
 button{
     display:block;
     margin:auto;
+    font-size: large;
+    background-color: #aaa;
+    border-width: 3px;
+    border-radius:1rem;
+    border-style: solid;
+    border-color: #000;
 
+}
+option{
+    background:inherit;
 }
 #outputfield{
     background-color:#aaa;
     min-width:320px;
-    min-height:200px;
+    min-height:100px;
     border-width: 10px;
     border-radius:1rem;
     border-style: solid;
@@ -121,4 +138,42 @@ button{
     display:block;
     margin:auto;
     padding: 2rem;
+    font-size: large;
+}
+#cendiv{
+    width:10%;
+    height:10%;
+    background-color: rgb(255, 92, 92);
+    text-align: center;
+    padding:1%;
+    border-radius: 0.5rem;
+}
+.Cen-Marg{
+    margin:auto;
+}
+.Cen-Pos{
+    position:absolute;
+    left: 44% ;
+
+}
+.Cen-Flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#via{
+    display:inline;
+    background:#333;
+    color:#aaa;
+    border:none;
+    font-family:sans-serif;
+    padding-bottom:10px;
+    color: #bbb;
+    margin: 10px;
+    text-decoration: none;
+    font-size:medium;
+    
+}
+#parent4flex{
+    display:flex;
 }

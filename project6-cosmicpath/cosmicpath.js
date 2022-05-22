@@ -1,7 +1,7 @@
 const UnitNames = ["one","two", "three", "four","five","six", "seven","eight","nine"]
 const TeenNames = ["ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
 const DeciNames = ["twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"]
-const CommaNames = ["thousand","million","billion","trillion","quadrillion","quintillion","sextillion","septillion","octillion","nonillion"]
+const CommaNames = ["thousand","million","billion","trillion","quadrillion"]
 
 
 function namenum(x){
@@ -39,6 +39,12 @@ function namenum(x){
                     name=UnitNames[Number(digit)-1]+name 
                 }
             }
+        }else{
+            if ((x.length-(y+1))%3==0 && (x.length-(y+1))!=0 && y<=2){
+
+                var c = ((x.length-(y+1))/3)-1
+                name = CommaNames[c]+" " + name
+            }
         }
         y=y-1;
     }
@@ -60,4 +66,5 @@ function Cosmicpath(x){
     return line
 }
 
-console.log(Cosmicpath(100000000))
+
+console.log(namenum(1000000000000011))
