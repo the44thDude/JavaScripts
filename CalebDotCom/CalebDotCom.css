@@ -8,6 +8,7 @@ html {
     scrollbar-base-color: rgb(185, 141, 121);
     scrollbar-face-color: rgba(141, 102, 85,0.8);
     scrollbar-color: rgb(185,141,121);
+    box-sizing: border-box;
 }
 :root{
     --bgcolor1:rgb(141, 102, 85);
@@ -48,6 +49,7 @@ h3 {
 h4{
     font-family:sans-serif;
     font-weight:bold;
+    font-size:large;
 }
 h5{
     font-family:sans-serif;
@@ -176,4 +178,28 @@ option{
 }
 #parent4flex{
     display:flex;
+}
+.doc-card{
+    background-image:url('DOCS.jpg');
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-size:contain;
+    height:150px;
+    width:150px;
+    text-align:center;
+    padding-top:75px;
+    cursor: pointer;
+    display:inline-block;
+}
+.git-card{
+    background-image:url('GIT.jpg');
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-size:contain;
+    height:150px;
+    width:150px;
+    text-align:center;
+    padding-top:75px;
+    cursor: pointer;
+    display:inline-block;
 }
