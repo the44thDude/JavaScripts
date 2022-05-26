@@ -35,8 +35,115 @@
     </nav>
   </header> 
     <main>
-        <p>A Mock Database</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta pariatur nisi, laudantium cum consectetur iusto asperiores atque adipisci sint quasi nulla facere a natus voluptatum quis, eius rerum animi nesciunt eum. Corporis tenetur dolor distinctio odit id debitis eius quasi natus exercitationem architecto voluptatibus, minus, temporibus libero rem, commodi suscipit blanditiis veniam facere ducimus recusandae! Aspernatur facere error delectus cupiditate, quo aliquid ipsam a harum corporis mollitia, quaerat nostrum. Rerum sit repellendus aliquid sint, sapiente nostrum. Tempora ipsum aliquid, nesciunt hic fugit eligendi, architecto magnam illum velit voluptas magni ipsa suscipit inventore error omnis debitis minima illo! Et earum blanditiis est? Nisi eos, quibusdam eligendi ut saepe laudantium, suscipit dolores perferendis, reprehenderit impedit ad modi. Enim blanditiis nobis delectus repellendus odio sunt, voluptas iure culpa quia, ducimus, aliquam obcaecati dicta eum. Quos fuga cumque esse maiores facilis non laborum nemo neque veritatis, suscipit sapiente! Provident explicabo quos ipsum commodi eligendi beatae illum? Rerum libero at consectetur numquam vero facilis accusamus, perferendis possimus voluptatem, vel illum. Earum accusamus placeat corporis voluptatibus soluta velit blanditiis sed atque, quasi nam dignissimos. Officia atque eius dignissimos fugit saepe fugiat est quos, voluptates consequatur repellat nesciunt dolores itaque nemo quasi possimus quo soluta praesentium reiciendis? Dolore, deserunt placeat repudiandae commodi reprehenderit quos facere laboriosam quam sed nam magni, consectetur inventore est error repellat id, excepturi qui nihil molestiae autem officiis unde? Ex doloremque nam ab consequatur recusandae sunt quos aliquid sed fuga officiis minima nihil dolorem rem assumenda voluptates, aliquam corrupti. Perferendis vero accusamus ipsam quod eveniet deserunt quas minus autem tempora optio numquam asperiores tenetur, maxime esse ad minima voluptatem rem officiis nostrum nemo ipsum eligendi veritatis, non porro? Nisi nobis magnam consequatur autem exercitationem officia hic cumque, vel necessitatibus incidunt repellat molestiae et obcaecati temporibus perferendis, similique minima ut illo voluptas, doloremque deleniti quis sequi. Reprehenderit provident, ullam sit quibusdam aspernatur sequi, quos nemo eum odio architecto officiis quo alias molestiae, laudantium perspiciatis. Maiores sunt, blanditiis quam dolorem eveniet repudiandae at aspernatur. Excepturi provident ducimus eligendi obcaecati optio hic inventore porro repellat voluptas consectetur nulla deleniti sequi beatae atque molestias rem sint maiores quo voluptatum, corporis culpa quibusdam iusto quaerat? Ipsum fugiat nam nobis id commodi? Tempora laboriosam fuga nobis soluta voluptate cumque, alias nisi mollitia, magnam repudiandae magni, ducimus inventore. Repudiandae ipsam deleniti quo numquam repellat totam quis rem beatae tempore cumque eos vitae voluptate quaerat, exercitationem explicabo. Rerum voluptas quisquam repellendus ab voluptate dolorem ducimus atque accusamus laudantium? At necessitatibus, dignissimos voluptate aut consequatur illum hic, adipisci accusamus eveniet, ab odit laborum corrupti beatae modi dolorem aperiam! Obcaecati omnis exercitationem aperiam? Nesciunt cumque animi dignissimos alias repellendus, numquam accusamus aliquid, id expedita est voluptatum vel. Dolores amet illo illum doloribus optio quibusdam sapiente nulla enim in dolorum repudiandae veritatis deserunt numquam similique, id quod ipsa quo maiores ipsam. Vel fugit itaque culpa esse voluptas, debitis laudantium sapiente. Dignissimos dolore, similique sapiente voluptas aliquam ex pariatur voluptate. Placeat vero incidunt, ullam id, reprehenderit qui ipsam saepe, perspiciatis accusantium eligendi est vitae! Nisi, explicabo. Consectetur eligendi labore veritatis odit, soluta architecto. Tempora, provident fugit quod pariatur explicabo qui, praesentium ipsum dolorem quam quasi quia voluptatibus molestiae modi excepturi! Vero enim optio id ut fuga eius. Id qui odit quod accusamus nulla reiciendis obcaecati voluptatem expedita voluptates earum. Quasi, rem dolores culpa animi sunt totam minus nesciunt excepturi a repudiandae quidem dolore sequi quis! Soluta, incidunt totam. Ab, enim! Cupiditate itaque nisi temporibus voluptates aut mollitia dignissimos nemo alias voluptate perferendis doloremque vitae cumque amet ipsam, quibusdam doloribus hic! Nemo, sunt tempora praesentium, laboriosam neque architecto culpa, doloremque ex nihil quaerat perferendis! Et, perferendis!</p>
+      <script>
+        function send(x){
+          var form= document.getElementById(x+"form")
+          var button= document.getElementById(x+"button")
+          if (x=="Rs"){
+            url='https://qt4t0la0gj.execute-api.us-east-1.amazonaws.com/prod/NPCs';
+              var request = new XMLHttpRequest();
+              request.open('GET', url);
+              request.send();
+              request.onload = ()=>{
+                document.getElementById("outputfield").innerHTML=request.response;
+              }
+          }else if (form.className=="hidden-form"){
+            form.className="open-form";
+            button.innerHTML="Submit";
+          }else{
+            form.className="hidden-form"
+            if(x=='C'){
+              button.innerHTML="New NPC"
+              NPCid=document.getElementById("NPCidC").value
+              Name=document.getElementById("Name").value
+              str=document.getElementById("str").value
+              dex=document.getElementById("dex").value
+              con=document.getElementById("con").value
+              int=document.getElementById("int").value
+              wis=document.getElementById("wis").value
+              cha=document.getElementById("cha").value
+              NPC= '{ "NPCid": "'+NPCid+'", "Name": "'+Name+'", "str":'+str+', "dex":'+dex+', "con":'+con+', "int":'+int+', "wis":'+wis+', "cha":'+cha+'}'
+              var request = new XMLHttpRequest();
+              request.open('POST', 'https://qt4t0la0gj.execute-api.us-east-1.amazonaws.com/prod/NPC');
+              request.send(NPC);
+              request.onload = ()=>{
+                document.getElementById("outputfield").innerHTML=request.response;
+              }
+            }else if(x=='R'){
+              button.innerHTML="Fetch NPC"
+              NPCid=document.getElementById("NPCidR").value
+              url='https://qt4t0la0gj.execute-api.us-east-1.amazonaws.com/prod/NPC?NPCid='+NPCid+'';
+              var request = new XMLHttpRequest();
+              request.open('GET', url);
+              request.send();
+              request.onload = ()=>{
+                document.getElementById("outputfield").innerHTML=request.response;
+              }
+            }else if(x=='U'){
+              button.innerHTML="Change NPC"
+              NPCid=document.getElementById("NPCidU").value
+              Uattr=document.getElementById("Uattr").value
+              Uval=document.getElementById("Uval").value
+              sendval= '{NPCid:'+NPCid+', updateKey:'+Uattr+', updateValue:'+Uval+'}'
+              var request = new XMLHttpRequest();
+              request.open('POST', 'https://qt4t0la0gj.execute-api.us-east-1.amazonaws.com/prod/NPC');
+              request.send(NPC);
+              request.onload = ()=>{
+                document.getElementById("outputfield").innerHTML=request.response;
+              }
+
+            }else if(x=='D'){
+              button.innerHTML="Kill NPC"
+              NPCid=document.getElementById("NPCidD").value
+              url='https://qt4t0la0gj.execute-api.us-east-1.amazonaws.com/prod/NPC?NPCid='+NPCid;
+              var request = new XMLHttpRequest();
+              request.open('DELETE', url);
+              request.send();
+              request.onload = ()=>{
+                document.getElementById("outputfield").innerHTML=request.response;
+              }
+            }
+          }
+          
+        }
+      </script>
+      <h2>Mock Database</h2>
+      <h4>Below are basic CRUD functions all of them work on my Database of Non-Player Characters (NPCs)</h4>
+      <div ID="CREATE">
+        <button onclick="send('C')" id="Cbutton">New NPC</button>
+        <div ID="Cform" class="hidden-form">
+          <input class="formboxes" type="text" Id="NPCidC" placeholder="enter a unique ID">
+          <input class="formboxes" type="text" Id="Name" placeholder="enter your name">
+          <input class="formboxes" type="text" Id="str" placeholder="enter your strength">
+          <input class="formboxes" type="text" Id="dex" placeholder="enter your dexterity">
+          <input class="formboxes" type="text" Id="con" placeholder="enter your constitution">
+          <input class="formboxes" type="text" Id="int" placeholder="enter your intelligence">
+          <input class="formboxes" type="text" Id="wis" placeholder="enter your wisdom">
+          <input class="formboxes" type="text" Id="cha" placeholder="enter your charisma">
+        </div>
+      </div>
+      <div ID="READ">
+        <button onclick="send('R')" id="Rbutton">Fetch NPC</button>
+        <div ID="Rform" class="hidden-form">
+          <input class="formboxes" type="text" Id="NPCidR" placeholder="enter a unique ID">
+        </div>
+        <button onclick="send('Rs')">Fetch all NPCs</button>
+      </div>
+      <div ID="UPDATE">
+        <button onclick="send('U')" id="Ubutton">Change NPC</button>
+        <div ID="Uform" class="hidden-form">
+          <input class="formboxes" type="text" Id="NPCidU" placeholder="enter a unique ID">
+          <input class="formboxes" type="text" Id="Uattr" placeholder="enter the attribute to update">
+          <input class="formboxes" type="text" Id="Uval" placeholder="enter the new value">
+        </div>
+      </div>
+      <div ID="DELETE">
+        <button onclick="send('D')" id="Dbutton">Kill NPC</button>
+        <div ID="Dform" class="hidden-form">
+          <input class="formboxes" type="text" Id="NPCidD" placeholder="enter a unique ID">
+        </div>
+      </div>
+      <div id="outputfield"></div>
     </main>
 </body>
 </html>

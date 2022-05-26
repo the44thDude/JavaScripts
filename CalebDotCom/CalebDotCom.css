@@ -4,16 +4,12 @@ html {
     padding:0 px;
     margin: 0px;
     -ms-overflow-style: none;
-    scrollbar-arrow-color: #000;
-    scrollbar-base-color: rgb(185, 141, 121);
-    scrollbar-face-color: rgba(141, 102, 85,0.8);
-    scrollbar-color: rgb(185,141,121);
     box-sizing: border-box;
 }
 :root{
-    --bgcolor1:rgb(141, 102, 85);
-    --bgcolor2:rgba(141, 102, 85,0.8);
-    --bgcolor3:rgb(185, 141, 121);
+    --bgcolor1:#333;
+    --bgcolor2:#bbb;
+    --bgcolor3:#aaa;
 }
 html::-webkit-scrollbar{
     display:none;
@@ -71,11 +67,15 @@ a{
     text-decoration: none;
     display:block;
 }
+@keyframes open_form{
+    from {height: 0px;}
+    to {height:100px;}
+}
 @keyframes open_menu{
     from {height: 40px;}
     to {height:160px;}
 }
-@keyframes close{
+@keyframes close_menu{
     from {height:160px;}
     to {height:40px;}
 }
@@ -111,7 +111,7 @@ nav{
     height:160;
 }
 .Cmenu{
-    animation-name:close;
+    animation-name:close_menu;
     animation-duration:0.5s;
     height:40px
 }
@@ -124,6 +124,7 @@ button{
     border-radius:1rem;
     border-style: solid;
     border-color: #000;
+    cursor: pointer;
 
 }
 option{
@@ -131,7 +132,7 @@ option{
 }
 #outputfield{
     background-color:#aaa;
-    min-width:320px;
+    min-width:220px;
     min-height:100px;
     border-width: 10px;
     border-radius:1rem;
@@ -145,7 +146,7 @@ option{
 #cendiv{
     width:10%;
     height:10%;
-    background-color: rgb(255, 92, 92);
+    background-color: rgb(252, 166, 166);
     text-align: center;
     padding:1%;
     border-radius: 0.5rem;
@@ -190,6 +191,7 @@ option{
     padding-top:75px;
     cursor: pointer;
     display:inline-block;
+    margin:auto;
 }
 .git-card{
     background-image:url('GIT.jpg');
@@ -202,4 +204,26 @@ option{
     padding-top:75px;
     cursor: pointer;
     display:inline-block;
+    margin:auto;
+}
+.hidden-form{
+    height:0;
+    width:220px;
+    overflow:hidden;
+}
+.open-form{
+    margin:auto;
+    height:100px;
+    width:310px;
+    animation-name:open_form;
+    animation-duration:0.5s;
+    overflow:hidden;
+
+}
+.formboxes{
+    margin:auto;
+    width:149px;
+    background-color: #aaa;
+    display:inline-block;
+    padding:0px;
 }
