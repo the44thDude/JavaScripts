@@ -26,11 +26,11 @@
     </script>
       <a href="index.html">Home</a>
       <a href="docs.html" style="padding-bottom:0px">Business skills</a>
-      <div id="pro-dropdown" onclick="action()"class="menu">
+      <div id="pro-dropdown" onclick="action()"class="menu"style="height:160px">
         <p id="devskill"> Developer skills</p>
-        <a href="css.html">CSS showcase</a>
-        <a href="cosmic.html">JS showcase</a>
-        <a href="data.html">Mock Database</a>
+        <a class="devskilllink" href="css.html">CSS showcase</a>
+        <a class="devskilllink" href="cosmic.html">JS showcase</a>
+        <a class="devskilllink" href="data.html">Mock Database</a>
       </div>
     </nav>
   </header> 
@@ -84,10 +84,10 @@
               NPCid=document.getElementById("NPCidU").value
               Uattr=document.getElementById("Uattr").value
               Uval=document.getElementById("Uval").value
-              sendval= '{NPCid:'+NPCid+', updateKey:'+Uattr+', updateValue:'+Uval+'}'
+              sendval= '{ "NPCid":'+NPCid+', "updateKey":'+Uattr+', "updateValue":'+Uval+'}'
               var request = new XMLHttpRequest();
-              request.open('POST', 'https://qt4t0la0gj.execute-api.us-east-1.amazonaws.com/prod/NPC');
-              request.send(NPC);
+              request.open('PATCH', 'https://qt4t0la0gj.execute-api.us-east-1.amazonaws.com/prod/NPC');
+              request.send(sendval);
               request.onload = ()=>{
                 document.getElementById("outputfield").innerHTML=request.response;
               }
@@ -112,29 +112,29 @@
       <div ID="CREATE">
         <button onclick="send('C')" id="Cbutton">New NPC</button>
         <div ID="Cform" class="hidden-form">
-          <input class="formboxes" type="text" Id="NPCidC" placeholder="enter a unique ID">
-          <input class="formboxes" type="text" Id="Name" placeholder="enter your name">
-          <input class="formboxes" type="text" Id="str" placeholder="enter your strength">
-          <input class="formboxes" type="text" Id="dex" placeholder="enter your dexterity">
-          <input class="formboxes" type="text" Id="con" placeholder="enter your constitution">
-          <input class="formboxes" type="text" Id="int" placeholder="enter your intelligence">
-          <input class="formboxes" type="text" Id="wis" placeholder="enter your wisdom">
-          <input class="formboxes" type="text" Id="cha" placeholder="enter your charisma">
+          <input class="formboxes" type="text" Id="NPCidC" placeholder="unique ID">
+          <input class="formboxes" type="text" Id="Name" placeholder="name">
+          <input class="formboxes" type="text" Id="str" placeholder="strength (str)">
+          <input class="formboxes" type="text" Id="dex" placeholder="dexterity (dex)">
+          <input class="formboxes" type="text" Id="con" placeholder="constitution (con)">
+          <input class="formboxes" type="text" Id="int" placeholder="intelligence (int)">
+          <input class="formboxes" type="text" Id="wis" placeholder="wisdom (wis)">
+          <input class="formboxes" type="text" Id="cha" placeholder="charisma (cha)">
         </div>
       </div>
       <div ID="READ">
         <button onclick="send('R')" id="Rbutton">Fetch NPC</button>
         <div ID="Rform" class="hidden-form">
-          <input class="formboxes" type="text" Id="NPCidR" placeholder="enter a unique ID">
+          <input class="formboxes" type="text" Id="NPCidR" placeholder="unique ID">
         </div>
         <button onclick="send('Rs')">Fetch all NPCs</button>
       </div>
       <div ID="UPDATE">
         <button onclick="send('U')" id="Ubutton">Change NPC</button>
         <div ID="Uform" class="hidden-form">
-          <input class="formboxes" type="text" Id="NPCidU" placeholder="enter a unique ID">
-          <input class="formboxes" type="text" Id="Uattr" placeholder="enter the attribute to update">
-          <input class="formboxes" type="text" Id="Uval" placeholder="enter the new value">
+          <input class="formboxes" type="text" Id="NPCidU" placeholder="unique ID">
+          <input class="formboxes" type="text" Id="Uattr" placeholder="attribute to update">
+          <input class="formboxes" type="text" Id="Uval" placeholder="new value">
         </div>
       </div>
       <div ID="DELETE">
