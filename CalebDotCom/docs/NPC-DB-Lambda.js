@@ -25,6 +25,8 @@ exports.handler = async function(event) {
       response = await modifyNPC(requestBody.NPCid, requestBody.updateKey, requestBody.updateValue);
     }else if(http.method === 'DELETE' && http.path === NPCpath){
       response = await DeleteNPC(JSON.parse(event.body).NPCid);
+    }else if (http.method === 'OPTIONS' && http.path === NPCpath){
+      response = buildResponse(200, '');
     }else{
         response = buildResponse(404, '404 Not Found');
     }
@@ -135,7 +137,8 @@ function buildResponse(statusCode, body) {
   return {
     statusCode: statusCode,
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Methods': '*'
     },
     body: JSON.stringify(body)
   }

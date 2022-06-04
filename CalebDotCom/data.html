@@ -24,6 +24,7 @@
       }
   
     </script>
+      <p class="hamico">•••</p>
       <a href="index.html">Home</a>
       <a href="docs.html" style="padding-bottom:0px">Business skills</a>
       <div id="pro-dropdown" onclick="action()"class="menu"style="height:160px">
@@ -84,9 +85,10 @@
               NPCid=document.getElementById("NPCidU").value
               Uattr=document.getElementById("Uattr").value
               Uval=document.getElementById("Uval").value
-              sendval= '{ "NPCid":'+NPCid+', "updateKey":'+Uattr+', "updateValue":'+Uval+'}'
+              sendval= '{ "NPCid": "'+NPCid+'", "updateKey":"'+Uattr+'", "updateValue":'+Uval+'}'
               var request = new XMLHttpRequest();
               request.open('PATCH', 'https://qt4t0la0gj.execute-api.us-east-1.amazonaws.com/prod/NPC');
+              request.setRequestHeader("Content-Type", "text/plain")
               request.send(sendval);
               request.onload = ()=>{
                 document.getElementById("outputfield").innerHTML=request.response;
@@ -144,6 +146,7 @@
         </div>
       </div>
       <div id="outputfield"></div>
+      <a class="doc-card"href="docs/NPC-DB-Lambda.js">Here is the Lambda function code</a>
     </main>
 </body>
 </html>

@@ -20,7 +20,7 @@ body {
     min-width: 300px;
     margin: 0 auto;
     padding: 0px;
-    background-image: url('https://lh3.googleusercontent.com/xiB21Ri4gTl0o9hl-Sx2AyhA14xa1SSbDJbMU5jlcZ_6W0mEoFRJ7EtmS9I0umLEx0srcWYruZHiS4NM5Wf1zzZhk1mZ-tc3yV2idk9y4pIbgHzsW1UzAjIj3Dc0I5EbzR14KjU5Pxk=w600-h315-p-k');
+    background-image: url('imgs/bg.jpeg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -97,7 +97,8 @@ main{
     min-height:800px;
     margin:auto;
 }
-nav{
+@media (min-width:1000px){
+    nav{
     background-color:#333;
     border-style: solid;
     border-color: #000;
@@ -107,6 +108,34 @@ nav{
     position: fixed;
     left:1rem;
     top:5rem;
+    }
+    .hamico{
+        display:none;
+    }
+}
+@media (max-width:999px){
+    nav{
+        background-color:#333;
+        border-style: solid;
+        border-color: #000;
+        border-width: 5px;
+        border-radius:1rem;
+        width: 45px;
+        position: fixed;
+        left:1rem;
+        top:2rem;
+        overflow:hidden;
+        height:30px;
+    }
+    nav:hover{
+        width:200px;
+        height:auto;
+    }
+    .hamico{
+        font-size:x-large;
+        width:60px;
+        height:30px;
+    }
 }
 #pro-dropdown{
     cursor:pointer;
@@ -197,7 +226,7 @@ option{
     display:flex;
 }
 .doc-card{
-    background-image:url('DOCS.jpg');
+    background-image:url('imgs/DOCS.jpg');
     background-repeat: no-repeat;
     background-attachment: local;
     background-size:contain;
@@ -210,7 +239,7 @@ option{
     margin:auto;
 }
 .git-card{
-    background-image:url('GIT.jpg');
+    background-image:url('imgs/GIT.jpg');
     background-repeat: no-repeat;
     background-attachment: local;
     background-size:contain;
