@@ -24,7 +24,7 @@ exports.handler = async function(event) {
       const requestBody = JSON.parse(event.body);
       response = await modifyNPC(requestBody.NPCid, requestBody.updateKey, requestBody.updateValue);
     }else if(http.method === 'DELETE' && http.path === NPCpath){
-      response = await DeleteNPC(JSON.parse(event.body).NPCid);
+      response = await DeleteNPC(event.queryStringParameters.NPCid);
     }else if (http.method === 'OPTIONS' && http.path === NPCpath){
       response = buildResponse(200, '');
     }else{
